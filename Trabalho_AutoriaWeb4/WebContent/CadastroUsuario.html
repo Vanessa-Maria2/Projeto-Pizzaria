@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	 
+	<style>
+		body {
+			background-color: #20c997;;
+			/*  cor dada pelo customize color bootstap */
+		}
+		
+		.container {
+			width: 30%;
+			margin: auto;
+		}
+		
+		.card-body {
+			background-color: whith;
+		}
+		
+		#img {
+			width: 200px;
+			margin-left: 100px;
+			padding-top: 0px;
+		}
+		
+		h2 {
+			text-aling: center;
+		}
+		
+		#butPular {
+			text-align: center;
+		}
+	</style>
+	
+	<script>
+			//essa função válida se as informações contidas nos campos referente ao formulário são vazias.
+			function validarFormulario() {
+				if (document.formulario1.txtNome.value == "") {
+					alert("O formulário deve ser preenchido");
+					return false;
+				} else if (document.formulario1.txtSenha.value == "") {
+					alert("O formulário deve ser preenchido");
+					return false;
+				} else if (document.formulario1.txtConfirmSenha.value == "") {
+					alert("O formulário deve ser preenchido");
+					return false;
+	
+				} else if (document.formulario1.opSexo.value == "") {
+					alert("O formulário deve ser preenchido");
+					return false;
+				} else{
+					//Chama essa função para fazer a validação das senhas
+					return validarSenha();
+				}
+			}
+			
+			/* tem o objetivo de verificar o tamanho do campo senha e confirmar senha, além de verificar se os valores de ambos são diferentes,
+			caso as condições do formulário sejam cumpridas vai entrar na última condição e submeter o formulário, retornando true */
+			function validarSenha() {
+				var txtSenha = document.formulario1.senha.value;
+				var txtConfirmSenha = document.formulario1.confirmarSenha.value;
+
+				 if((document.formulario1.senha.value.length < 6 || document.formulario1.senha.value.length > 10) & (document.formulario1.senha.value != document.formulario1.confirmarSenha.value)){
+					alert("Digite novamente a senha, ela deve conter de 6 a 10 caracteres. Ademais, Verifique a senha e o campo confirmar senha, ambas são distintas");
+					return false;
+				}else if((document.formulario1.senha.value.length < 6 || document.formulario1.senha.value.length > 10) & (document.formulario1.confirmarSenha.value.length < 6 || document.formulario1.confirmarSenha.value.length > 10)){
+					alert("Digite novamente a senha, ela deve conter de 6 a 10 caracteres");
+					return false;
+				}else if(document.formulario1.senha.value != document.formulario1.confirmarSenha.value){
+					alert("Verifique a senha e o campo confirmar, ambas são distintas");
+					return false;
+				}else {
+					document.formulario1.submit();
+					return true;
+				}
+			}
+		
+			//essa função é acionada ao clicar no button pular página cujo objetivo é redirecionar para a página principal
+			function mudarPagina(){
+				window.location.href = "PaginaPrincipal.html";
+			}
+			
+		
+		</script>
+
+		<title>Cadastro usuário</title>
+
+</head>
+<body>
+
+	<div class="container">
+		<!--utilização do default container do bootstrap-->
+		<div class="row justify-center mb-4">
+			<!--utilização do Justify content do bootstrap .justify-content-center para centralizar a imagem-->
+			<img src="imagens/logomi.png" id="img" />
+		</div>
+		<div class="card">
+			<!--utilização do Componente Card do bootstrap para alinhamento do texto -->
+			<div class="card-body">
+				<fieldset>
+					<div class="row">
+						<legend>
+							<h2>Cadastro</h2>
+						</legend>
+						<span class="small d-block text-center"> Crie uma conta no
+							nosso site <b> Culinária pelo mundo</b>
+						</span> <span class="small d-block text-center"> OU</b></span>
+						<button type="button" class="btn btn-dark btn-block "
+							id="butPular" name="avancar" onclick="mudarPagina()">
+							Pular Cadastro</button>
+						<br>
+						<form action="PaginaPrincipal.html" name="formulario1" method="post"
+							enctype="multipart/form-data" style=" margin-top: 5px;">
+							<table>
+								<tr>
+
+									<!--utilização do Componente form control do bootstrap para o estilo personalizado -->
+
+									<th>Nome:</th>
+									<td><input type="text" name="txtNome" class="form-control"
+										id="validationServer01" placeholder="Nome Completo">
+									</td>
+								</tr>
+
+								<tr>
+									<th>Senha:</th>
+									<td><input type="password" id="txtSenha" name="senha"
+										class="form-control" aria-describedby="passwordHelpBlock"
+										placeholder="Informar senha"></td>
+								</tr>
+								<tr>
+									<th>Confirmar:</th>
+									<td><input type="password" id="txtConfirmSenha"
+										name="confirmarSenha" class="form-control"
+										aria-describedby="passwordHelpBlock"
+										placeholder="Confirmar senha"></td>
+								</tr>
+								<tr>
+									<!--utilização do Componente form input group do bootstrap para o estilo personalizado dos Checkboxes and radios -->
+
+									<th>Sexo:</th>
+
+									<td><input class="form-check-input" type="radio"
+										name="opSexo" id="flexRadioDefault1"> Feminino <input
+										class="form-check-input" type="radio" name="opSexo"
+										id="flexRadioDefault2" checked> Masculino</td>
+								</tr>
+								<tr>
+									<th>Interesse:</th>
+									<td><input class="form-check-input" type="checkbox"
+										value="R" id="defaultCheck1"> Receita <input
+										class="form-check-input" type="checkbox" value="C"
+										id="defaultCheck1"> Contribuir <input
+										class="form-check-input" type="checkbox" value="V"
+										id="defaultCheck1"> Visitar</td>
+								</tr>
+								<tr>
+									<!--utilização do Componente form select do bootstrap para alterar a aparência do elemento inicial -->
+
+									<th>Estado:</th>
+									<td><select class="form-select form-select-sm"
+										aria-label=".form-select-sm example">
+
+											<option value="AC">Acre (AC)</option>
+											<option value="AL">Alagoas (AL)</option>
+											<option value="AP">Amapá (AP)</option>
+											<option value="AM">Amazonas (AM)</option>
+											<option value="BA">Bahia (BA)</option>
+											<option value="CE">Ceará (CE)</option>
+											<option value="DF">Distrito Federal (DF)</option>
+											<option value="ES">Espírito Santo (ES)</option>
+											<option value="GO">Goiás (GO)</option>
+											<option value="MA">Maranhão (MA)</option>
+											<option value="MT">Mato Grosso (MT)</option>
+											<option value="MS">Mato Grosso do Sul (MS)</option>
+											<option value="MG">Minas Gerais (MG)</option>
+											<option value="PA">Pará (PA)</option>
+											<option value="">Paraíba (PB)</option>
+											<option value="PR">Paraná (PR)</option>
+											<option value="PE">Pernambuco (PE)</option>
+											<option value="PI">Piauí (PI)</option>
+											<option value="RJ">Rio de Janeiro (RJ)</option>
+											<option value="RN">Rio Grande do Norte (RN)</option>
+											<option value="RS">Rio Grande do Sul (RS)</option>
+											<option value="RO">Rondônia (RO)</option>
+											<option value="RR">Roraima (RR)</option>
+											<option value="SC">Santa Catarina (SC)</option>
+											<option value="SP">São Paulo (SP)</option>
+											<option value="SE">Sergipe (SE)</option>
+											<option value="TO">Tocantins (TO)</option>
+									</select></td>
+								</tr>
+								<tr>
+									<th></th>
+
+								</tr>
+
+								<tr>
+									<!--utilização do Componente buttom  do bootstrap para alterar o formato dos botões e a cor para Dark -->
+
+									<td colspan="2" style="text-align: center;"><input
+										class="btn btn-dark" type="submit" value="Cadastrar"
+										onclick="return validarFormulario();"> <input
+										class="btn btn-dark" type="reset" value="Limpar"></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

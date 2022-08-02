@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Página 2</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	 
+	<link rel="stylesheet" href="css/estilo.css" type="text/css"/>
+	
+	<script>
+		// usei essa variável para não permitir que o usuário conseguisse avaliar a receita quando as estrelas estivessem vazias.
+		var cont = 0;
+		
+		/* abaixo das receitas adicionei estrelas que correspondem a avalição dela, dessa forma, quando o usuário clicar na posição
+		de uma estrela todas as estrelas anteriores até ela serão preenchidas, logo abaixo tem um button com a função de avaliar e o outro 
+		de resetar as estrelas preenchidas*/
+		function trocaEstrela(i){
+			if('img1' == i){
+				cont = 0;
+				document.getElementById("img1").src="imagens/estrela.png";
+				cont++;
+			} else if('img2' == i){
+				cont = 0;
+				document.getElementById("img1").src="imagens/estrela.png";
+				document.getElementById("img2").src="imagens/estrela.png";
+				cont++;
+			} else if('img3' == i){
+				cont = 0;
+				document.getElementById("img1").src="imagens/estrela.png";
+				document.getElementById("img2").src="imagens/estrela.png";
+				document.getElementById("img3").src="imagens/estrela.png";
+				cont++;
+			} else if('img4' == i){
+				cont = 0;
+				document.getElementById("img1").src="imagens/estrela.png";
+				document.getElementById("img2").src="imagens/estrela.png";
+				document.getElementById("img3").src="imagens/estrela.png";
+				document.getElementById("img4").src="imagens/estrela.png";
+				cont++;
+			} else if('img5' == i){
+				cont = 0;
+				document.getElementById("img1").src="imagens/estrela.png";
+				document.getElementById("img2").src="imagens/estrela.png";
+				document.getElementById("img3").src="imagens/estrela.png";
+				document.getElementById("img4").src="imagens/estrela.png";
+				document.getElementById("img5").src="imagens/estrela.png";
+				cont++;
+			}
+		}
+		
+		//ao clicar no button avaliar essa função enviará um alert indicando que a avaliação da receita foi realizada com sucesso
+		function avaliar(){
+			if(cont > 0){
+			alert("Avaliação feita com sucesso!");
+			}
+		}
+		
+		//tem a função de limpar as estrelas preenchidas, ou seja, faz a troca das imagens referentes as estrelas preenchidas para a imagem de estrela vazia
+		function limpar(){
+			cont = 0;
+			document.imagem1.src="imagens/estrelaVazia.jpg";
+			document.imagem2.src="imagens/estrelaVazia.jpg";
+			document.imagem3.src="imagens/estrelaVazia.jpg";
+			document.imagem4.src="imagens/estrelaVazia.jpg";
+			document.imagem5.src="imagens/estrelaVazia.jpg";
+		}
+		
+		/* essa função tem o objetivo de alterar o plano de fundo do div do id principal, dessa forma, criei buttons com opções de cores,
+		ademais, a função tem um parâmetro que recebe a cor passada ao clicar no button */
+		function planoDeFundo(color){
+				document.getElementById("principal").style.background=color;
+		}
+		
+	</script>
+</head>
+<body>
+	
+	<!-- usei o div container para delimitar o espaçamento da página e deixar visualmente melhor -->
+	<div class="container" id="principal">
+		<div class="row">
+			<div class="col" id="Logo">
+				<img src="imagens/lg2copia.png" style="margin-top: 20px;"/>
+				
+				<hr></hr>
+			</div>
+		</div>
+		
+		<!--Aqui usei o componente navbar para criar um menu, usei o nav-item dropdown para colocar as duas opções
+		 de cadastro da página sendo redirecionado a página ao clicar na opção escolhida -->
+		<div class="row" style="margin-buttom:10px;">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			  <div class="container-fluid">
+			    <a class="navbar-brand" href="#">Menu</a>
+			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			      <span class="navbar-toggler-icon"></span>
+			    </button>
+			    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+			      <ul class="navbar-nav">
+			      	<li class="nav-item">
+			          <a class="nav-link" href="#">Sobre</a>
+			        </li>
+			        <li class="nav-item dropdown">
+			          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			            Mais
+			          </a>
+			          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+				        <li><a class="dropdown-item" href="CadastroUsuario.html">Cadastro de Usuário</a></li>
+				        <li><a class="dropdown-item" href="CadastroReceita.html">Cadastro de Receita</a></li>
+				      </ul>
+			        </li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+		</div>
+		
+		<!-- Usei botões da documentação do Bootstrap para personalizar a página e cuja a funçao é alterar o plano de fundo da página ao ser clicado,
+		 para cada butão coloquei seu background-color a respectiva cor dele -->
+		<div class="row" style=" margin-top: 10px;">
+			<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+				<button type="button" class="btn btn-secondary" style=" margin-left:10px;"disabled>Plano de fundo:</button>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				<button type="button" class="btn btn-primary" style=" background: #F0F8FF; color: black; margin-left: 5px;"  onclick="planoDeFundo('#F0F8FF')">AliceBlue</button>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				<button type="button" class="btn btn-secondary" style=" background: #FFEFD5; color: black;" onclick="planoDeFundo('#FFEFD5')">PapayaWhip</button>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				<button type="button" class="btn btn-success" style=" background: #E0FFFF; color: black;" onclick="planoDeFundo('#E0FFFF')">PaleTurquoise</button>
+			</div>
+			<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+				<button type="button" class="btn btn-warning" style=" background: white; color: black; margin-left: 20px;" onclick="planoDeFundo('white')">White</button>
+			</div>
+		</div>
+		
+		<!-- Usei o center nas imagens para centralizar -->
+		<div class="row" id="cabecalho">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<center><img class="titulo" src="imagens/pizza_de_liquidificador.png" style=" margin-top: 20px;"
+				alt="Aqui deveria aparecer o título pizza de liquidificador"/> </center>
+				
+				<br></br>
+					
+				<center><img id="pizza2e3" src="imagens/pizza1.png" 
+					alt="Aqui deveria aparecer a foto de uma pizza"/></center>
+				
+				<br></br> 
+				
+				<center><img class="titulo" src="imagens/ingredientes.png"
+					alt="Aqui deveria aparecer o título ingredientes" /></center>
+				
+				</div>
+			</div>
+			
+			<!-- Usei a tabela do Bootstrap com class table table-striped table-hover, com background-color das linhas alternando em dois tons de cor,
+			além disso, adicionei também a class table-bordered para colocar a borda nos lados e fazer a respectiva divisão dos elementos visualmente -->
+			<div class="row">
+				<div class="col">
+							<table class="table table-striped table-hover table-bordered" >
+							  <thead>
+							    <tr>
+							      <th scope="col">Massa</th>
+							      <th scope="col">Recheio</th>
+							      <th scope="col">Ingredientes extras</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>1 xícara (chá) de leite 1 xícara (chá) de leite</td>
+							      <td>250 g de mussarela ralada grossa</td>
+							      <td>Paciência</td>
+							    </tr>
+							    <tr>
+							      <td>1 ovo</td>
+							      <td>2 tomates fatiados</td>
+							      <td>Amor</td>
+							    </tr>
+							    <tr>
+							      <td>1 colher (chá) de sal</td>
+							      <td>Azeitona picada</td>
+							      <td>Dedicação</td>
+							    </tr>
+							     <tr>
+							      <td>1 colher (chá) de açúcar</td>
+							      <td>Orégano a gosto</td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <td>1 colher (chá) de açúcar</td>
+							      <td>Orégano a gosto</td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <td>1 colher (sopa) de margarina</td>
+							      <td></td>
+							      <td></td>
+							    </tr>
+							     <tr>
+							      <td>1 e 1/2 xícara (chá) de farinha de trigo</td>
+							      <td></td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <td>1 colher (sobremesa) de fermento em pó</td>
+							      <td></td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <td>1/2 lata de molho de tomate</td>
+							      <td></td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							    	<td colspan="12">DICA: é muito importante anotar os ingredientes para na hora não faltar nada.</td>
+							    </tr>
+							  </tbody>
+							</table>
+						
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					<img src="imagens/modo_de_preparo.jpg"
+						alt="Aqui deveria aparecer o texto modo de preparo" />
+				</div>
+			</div>
+			
+			<!-- Usei o sistema de grid para posicionar a lista referente ao modo de preparo da receita a imagem personalizada que tem 
+			o texto "Vídeo Demostrativo clique! que tem o objetivo de redirecionar para o YouTube e o respectivo vídeo da receita -->
+			<div class="row">
+				<div class="col-sm-9 col-md-9 col-lg-9 col-xL-9">
+					<ul>
+						<li>No liquidificador bata o leite, o ovo, o sal, o açúcar, a
+							margarina, a farinha de trigo e o fermento em pó até que tudo esteja
+							encorporado.</li>
+						<li>Despeje a massa em uma assadeira para pizza untada com
+							margarina e leve ao forno preaquecido por 20 minutos</li>
+						<li>Retire do forno e despeje o molho de tomate.</li>
+						<li>Cubra a massa com mussarela ralada, tomate e orégano agosto.</li>
+						<li>Leve novamente ao forno até derreter a mussarela.</li>
+					</ul>
+				</div>
+				
+				<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+					<a id="videoexplicativo" href="https://www.youtube.com/watch?v=LQQmYVJ74FI" target="_blank"> 
+						<img src="imagens/Video_demostrativo_clique!.jpg" style=" width: 90%;"
+						 alt="Aqui deveria aparecer a logo do YouTube com o texto Vídeo Demostrativo clique!"/>
+					</a>
+				</div>
+			</div>
+			
+			<!-- imagem de estrelas vazias para avaliar a receita, usei o sistema de grid para tentar dá um posicionamento 
+			como quebrava em algumas versões usei o center para ajeitar  -->
+			<div class="row">
+				<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				
+				</div>
+				<div class="col-sm-8 col-md-8 col-lg-8 col-xl-8">
+					<center><div>
+						<img src="imagens/estrelaVazia.jpg" id="img1" name="imagem1" style="width: 50px;" alt="Aqui deveria aparecer uma estrela vazia" onclick="trocaEstrela('img1')"/>
+							
+						<img src="imagens/estrelaVazia.jpg" id="img2" name="imagem2" style="width: 50px;" alt="Aqui deveria aparecer uma estrela vazia" onclick="trocaEstrela('img2')"/>
+								
+						<img src="imagens/estrelaVazia.jpg" id="img3" name="imagem3" style="width: 50px;" alt="Aqui deveria aparecer uma estrela vazia" onclick="trocaEstrela('img3')"/>
+								
+						<img src="imagens/estrelaVazia.jpg" id="img4" name="imagem4" style="width: 50px;" alt="Aqui deveria aparecer uma estrela vazia" onclick="trocaEstrela('img4')"/>
+								
+						<img src="imagens/estrelaVazia.jpg" id="img5" name="imagem5" style="width: 50px;" alt="Aqui deveria aparecer uma estrela vazia" onclick="trocaEstrela('img5')"/>
+					</div></center>
+				</div>
+				
+				<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				
+				</div>
+				
+			</div>
+			
+			<br/>
+			
+			<!-- Botões com personalização do Bootstrap que tem a função de avaliar e resetar as estrelas dada a receita  -->
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+				
+				</div>
+				
+				<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2" style=" margin-left: 28px;">
+					<button type="button" class="btn btn-outline-success" onclick="avaliar();">Avaliar</button>
+				</div>
+				
+				<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+					<button type="button" class="btn btn-outline-danger" onclick="limpar();">Resetar</button>
+				</div>
+				
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+				
+				</div>
+			</div>
+			
+			<br/>
+		
+		<!-- Decoração da página -->
+		<div class="row">
+			<div class="col">
+				<div class="decoracao">
+					<img src="imagens/1.copia.png"
+						alt="Aqui deveria aparecer elementos relacionados a culinária e a pizza (decoração)" style=" margin-top: 20px;"/>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Aqui usei um componente do Bootstrap referente a paginação, onde ele tem a função de passar as páginas (bastante semelhante 
+		a um conjunto de botões), para algumas páginas desativei a parte voltar e próxima -->
+		<div class="row" id="buttonss" style="  margin-top: 20px;">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<nav aria-label="Page navigation example">
+			  <ul class="pagination justify-content-end">
+			    <li class="page-item">
+			      <a class="page-link" href="PaginaPrincipal.html" style=" background: black;">Voltar</a>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="PaginaPrincipal.html" style=" background: black;">1</a></li>
+			    <li class="page-item"><a class="page-link" href="Pagina2.html" style=" background: black;">2</a></li>
+			    <li class="page-item"><a class="page-link" href="Pagina3.html" style=" background: black;">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="Pagina3.html" style=" background: black;">Próxima</a>
+			    </li>
+			  </ul>
+			</nav>
+			</div>
+		</div>
+			
+		<!-- Rodapé da página -->
+		<div class="row" id="rodape">
+			<div class="col"><hr></hr>
+				<b>Organização: Mírian Andryellen Vital Pinheiro e Vanessa Maria
+					de Oliveira Silva. <br></br>
+				</b> Qualquer dúvida pode entrar em contato com os respectivos meios
+				abaixo. <br></br> E-mails: mirian.v@escolar.ifrn.edu.br ou
+				vanessa.maria@escolar.ifrn.edu.br. <br></br> Telefones: (084)
+				99465-7045 ou (084) 98816-3929 <br></br>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

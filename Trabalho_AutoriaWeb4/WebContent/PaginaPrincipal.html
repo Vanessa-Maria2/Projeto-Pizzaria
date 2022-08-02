@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Página Principal</title>
+	   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	 
+	<link rel="stylesheet" href="css/estilo.css" type="text/css"/>
+	
+	<script>
+		/* essa função tem o objetivo de alterar o plano de fundo do div do id principal, dessa forma, criei buttons com opções de cores,
+		ademais, a função tem um parâmetro que recebe a cor passada ao clicar no button */
+		function planoDeFundo(color){
+				document.getElementById("principal").style.background=color;
+		}
+		
+		/* com a propriedade display eu alterei a visibilidade referente a parte de curiosidades, dessa forma, após ocultar
+		o texto é possível mudar para ficar visível*/
+		function mostrarTexto(){
+			document.getElementById("curiosidades").style.display="block";
+		}
+		
+		//oculta o texto referente as curiosidades da página
+		function limparTexto(){
+			document.getElementById("curiosidades").style.display="none";
+		}
+		
+		//aumenta o tamanho da imagem quando o mouse passar por cima dela
+		function bigImg(x){
+			 x.style.height = "400px";
+			 x.style.width = "600px";
+		}
+		
+		//altera o tamanho da imagem para o que estava anteriormente após tirar o mouse de cima dela
+		function normalImg(x) {
+			  x.style.height = "300px";
+			  x.style.width = "500px";
+		}
+		
+	</script> 
+	
+	<style>
+		#carouselExampleCaptions {
+			width: 70%;
+			margin: auto;
+		}
+		
+	</style>
+	
+</head>
+<body>
+	
+	<!-- usei o div container para delimitar o espaçamento da página e deixar visualmente melhor -->
+	<div class="container" id="principal">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12" id="Logo">
+				<img src="imagens/lg2copia.png" style="margin-top: 20px;"/>
+				
+				<hr></hr>
+			</div>
+		</div>
+		
+		<!--Aqui usei o componente navbar para criar um menu, usei o nav-item dropdown para colocar as duas opções
+		 de cadastro da página sendo redirecionado a página ao clicar na opção escolhida -->
+		<div class="row" style="margin-buttom:10px;">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				  <div class="container-fluid">
+				    <a class="navbar-brand" href="#">Menu</a>
+				    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				      <span class="navbar-toggler-icon"></span>
+				    </button>
+				    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+				      <ul class="navbar-nav">
+				      	<li class="nav-item">
+				          <a class="nav-link" href="#">Sobre</a>
+				        </li>
+				        <li class="nav-item dropdown">
+				          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				            Mais
+				          </a>
+				          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+				            <li><a class="dropdown-item" href="CadastroUsuario.html">Cadastro de Usuário</a></li>
+				            <li><a class="dropdown-item" href="CadastroReceita.html">Cadastro de Receita</a></li>
+				          </ul>
+				        </li>
+				      </ul>
+				    </div>
+				  </div>
+				</nav>
+			</div>
+		</div>
+		
+		<!-- Usei botões da documentação do Bootstrap para personalizar a página e cuja a funçao é alterar o plano de fundo da página ao ser clicado,
+		 para cada butão coloquei seu background-color a respectiva cor dele -->
+		<div class="row" style=" margin-top: 10px;">
+			<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+				<button type="button" class="btn btn-secondary" style=" margin-left:10px;"disabled>Plano de fundo:</button>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				<button type="button" class="btn btn-primary" style=" background: #F0F8FF; color: black; margin-left: 5px;"  onclick="planoDeFundo('#F0F8FF')">AliceBlue</button>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				<button type="button" class="btn btn-secondary" style=" background: #FFEFD5; color: black;" onclick="planoDeFundo('#FFEFD5')">PapayaWhip</button>
+			</div>
+			<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+				<button type="button" class="btn btn-success" style=" background: #E0FFFF; color: black;" onclick="planoDeFundo('#E0FFFF')">PaleTurquoise</button>
+			</div>
+			<div class="col-sm-3 col-md-3 col-lg-3 col-xl-3">
+				<button type="button" class="btn btn-warning" style=" background: white; color: black; margin-left: 20px;" onclick="planoDeFundo('white')">White</button>
+			</div>
+		</div>
+		
+		<div class="row" style="margin-top: 25px; text-align: center;">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<h3>Sejam bem-vindos à Culinária pelo mundo!</h3>
+			
+			<p><b>A Culinária pelo mundo busca apresentar as comidas diversificadas que surgiram pelo mundo, hoje vamos 
+			conhecer um pouco sobre a pizza e a sua origem, um prato que se tornou tão conhecido e comum mundialmente.
+			</b></p>
+			
+			<!-- Usei um alert do Bootstrap com coloração bonita para desejar uma mensagem positiva ao usuário -->
+			<div class="alert alert-warning" role="alert">
+			 Agradecemos a sua presença, esperamos que explore o site e se divirta com as receitas. 
+			</div>
+			
+			<img id="imgpizza" src="imagens/pizza.jpg" alt="Aqui deveria aparecer a foto de uma pizza" onmouseover="bigImg(this)" onmouseout="normalImg(this)" />
+			</div>
+		</div>
+		
+		<br></br>
+		
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<img src="imagens/origem_da_pizza.png" style="width: 250px; margin-left: 20px;"
+					alt="Aqui deveria aparecer o título Origem da pizza" />
+	
+				<div id="conteudo">
+					<p>
+					Talvez você já tenha ouvido falar que a origem da pizza vem da
+					Itália, mas antes de concluir isso vamos voltar ao passado e analisar
+					pontos pertinentes que indicam outras versões sobre esse fato. Há
+					aproximadamente 6 mil anos atrás, os Hebreus e Egípcios já
+					desenvolviam uma massa com farinha e água, conhecida como “pão de
+					Abrahão”, muito semelhante ao pão Sírio. Ademais, estudiosos afirmam
+					que os Gregos produziam suas massas com ingredientes como farinha de
+					trigo, arroz ou grão de bico, as quais eram assadas em tijolos
+					ardentes. Outro ponto importante, foi o fato dos Fenícios terem o
+					hábito de ressecarem suas massas e recheá-las com carne e cebola,
+					sendo mantida a tradição pelos turcos muçulmanos durante a Era
+					Medieval. Além disso, as Cruzadas contribuíram para disseminação
+					dessa iguaria culinária por todo o mundo, tendo um desembarque
+					crucial na Itália através do porto de Nápoles, surgindo assim o
+					adicionamento de novos ingredientes nesta receita como o tomate e
+					logo depois conquistando um novo formato. Portanto, concluímos que a
+					pizza passou por todo um processo durante as civilizações citadas
+					acima até se tornar o que conhecemos hoje, tendo surgido durante esse
+					período e então desenvolvida logo em diante pela Itália.
+					</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<div class="decoracao">
+					<img src="imagens/2.copia.png"
+						alt="Aqui deveria aparecer elementos relacionados a culinária e a pizza (decoração)" />
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">	
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+				<div id="curiosidades">
+				<img src="imagens/curiosidades.1.png"
+					alt="Aqui deveria aparecer o título Curiosidades" />
+				<ul style=" margin-top: 12px;">
+					<li>Antigamente a pizza tinha o formato de calzone e sanduíche.</li>
+					<li>No início de quando a pizza surgiu, seu recheio era apenas
+						ervas da região e azeite de oliva.</li>
+					<li>O tomate usado pelos italianos eram recém-chegados da
+						américa trazidos pelos espanhóis.</li>
+					<li>A pizza também era conhecida como ‘piscea’.</li>
+					<li>Antes de toda essa repercussão, a pizza era utilizada para
+						matar a fome dos mais pobres que se localizavam no Sul da Itália.</li>
+					<li>No século XIX, mais precisamente em 1889, o padeiro dom
+						Raffaele Espósito de Nápoles fez uma pizza para o rei Umberto I e a
+						rainha Margherita, com o intuito de homenageá los colocou cores da
+						bandeira da Itália na pizza, sendo branco, verde e vermelho,
+						utilizou de elementos como mussarela, tomate e manjericão para
+						decorar la. Outro fato importante foi o de que o padeiro dom
+						Raffaele decidiu nomear a pizza de Margherita devido a rainha ter
+						apreciado tanto ela.</li>
+					<li>A fama da pizza proporcionou o surgimento da primeira
+						pizzaria, então chamada de Port'Alba.</li>
+					<li>A pizza chegou ao Brasil através dos imigrantes italianos,
+						tendo maior concentração em São Paulo no bairro paulistano do Brás.</li>
+					<li>Esta iguaria culinária era restrita com maior concentração
+						aos italianos até 1950, dessa forma, tornando-se um prato conhecido
+						mundialmente e então fazendo parte da cultura brasileira.</li>
+					<li>No dia 10 de Julho é comemorado o dia da pizza, isso desde
+						1985.</li>
+				</ul>
+
+				<b>Link de vídeo sobre outras curiosidades sobre a pizza: </b><a href="https://www.youtube.com/watch?v=qF5Tq6eP4eI"
+				target="blank_band" style=" background: black;">Outras curiosidades</a>
+				
+				</div>
+				
+				<br/>
+				
+				</div>
+			</div>
+				
+			<!-- Botões para mostrar e ocultar a parte do site a qual se refere a curiosidades, o estilo deles é do Bootstrap, além disso, 
+			usei o sistema de grid para posicionar os botões de uma forma boa -->
+			<div class="row">
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+				
+				</div>
+				
+				<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+					<button type="button" class="btn btn-outline-primary"  onclick="mostrarTexto()">Mostrar</button>
+				</div>
+				
+				<div class="col-sm-2 col-md-2 col-lg-2 col-xl-2">
+					<button type="button" class="btn btn-outline-dark" onclick="limparTexto()">Ocultar</button>
+				</div>
+				
+				<div class="col-sm-4 col-md-4 col-lg-4 col-xl-4">
+				
+				</div>
+			</div>
+			
+			<br></br>
+			
+			<!-- Usei o carrossel do Bootstrap que passa imagens mais títulos para mostrar imagens referente as curiosidades -->
+			<div class="row">
+				<div class="col">
+					<div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
+						  <ol class="carousel-indicators">
+						    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"></li>
+						    <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
+						     <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
+						  </ol>
+						  <div class="carousel-inner">
+						    <div class="carousel-item active">
+						      <img src="imagens/calzone2.jpg" class="d-block w-100" alt="...">
+						      <div class="carousel-caption d-none d-md-block">
+						        <h6 style=" color: white">Conhecido como pizza dobrada.</h6>
+						      </div>
+						    </div>
+						    <div class="carousel-item">
+						      <img src="imagens/pizza-margherita.jpg" class="d-block w-100" alt="...">
+						      <div class="carousel-caption d-none d-md-block">
+						        <h6 style=" color: white;"> Pizza Marguerita, Conhecida como pizza tradicional da casa.</h6>
+						      </div>
+						    </div>
+						   <div class="carousel-item">
+						      <img src="imagens/bairro-bras.jpg" class="d-block w-100" alt="...">
+						      <div class="carousel-caption d-none d-md-block">
+						        <h5 style=" color: white">Bairro Brás</h5>
+						        <h6 style=" color: white; weigth: bold;">Localizado em São Paulo.</h6>
+						      </div>
+						    </div>
+						   
+						  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+						    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						    <span class="visually-hidden">Previous</span>
+						  </a>
+						  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+						    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+						    <span class="visually-hidden">Next</span>
+						  </a>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		<!-- Decoração da página -->
+		<div class="row">
+			<div class="col">
+				<div class="decoracao">
+					<img src="imagens/1.copia.png"
+						alt="Aqui deveria aparecer elementos relacionados a culinária e a pizza (decoração)" style=" margin-top: 20px;"/>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Aqui usei um componente do Bootstrap referente a paginação, onde ele tem a função de passar as páginas (bastante semelhante 
+		a um conjunto de botões), para algumas páginas desativei a parte voltar e próxima -->
+		<div class="row" id="buttonss" style="  margin-top: 20px; margin-buttom: 10px;">
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+			<nav aria-label="Page navigation example">
+			  <ul class="pagination justify-content-end">
+			    <li class="page-item disabled">
+			      <a class="page-link" href="#" tabindex="-1" aria-disabled="true" style=" background: black;">Voltar</a>
+			    </li>
+			    <li class="page-item"><a class="page-link" href="PaginaPrincipal.html" style=" background: black;">1</a></li>
+			    <li class="page-item"><a class="page-link" href="Pagina2.html" style=" background: black;">2</a></li>
+			    <li class="page-item"><a class="page-link" href="Pagina3.html" style=" background: black;">3</a></li>
+			    <li class="page-item">
+			      <a class="page-link" href="Pagina2.html" style=" background: black;">Próxima</a>
+			    </li>
+			  </ul>
+			</nav>
+			</div>
+		</div>
+		
+		<!-- Esse é um componente card do Bootstrap usei ele para colocar outras receitas como sugestão para o usuário ver caso tenha interesse, 
+		ao apertar em ver mais da receita o usuário será redirecionado a página referente a essa receita -->
+		<div class="row" style=" margin-top: 10px;">
+			<div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+					<div class="card" style="width: 100%; height: 100%;">
+					  <img src="imagens/pudim.jpg" class="card-img-top" alt="..." style=" height: 100%;">
+					  <div class="card-body">
+					  <h5 class="card-title">Pudim de leite condensado moça</h5>
+					  <p class="card-text">Ótima receita para adoçar a sua vida.</p>
+					  <a href="Receita1_card.html" class="btn btn-primary">Ver mais</a>
+  					</div>
+					</div>
+			 </div>
+			 <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+					<div class="card" style="width: 100%; height: 100%;">
+					  <img src="imagens/mousse.jpg" class="card-img-top" alt="..." style=" height: 100%;">
+					  <div class="card-body">
+					  <h5 class="card-title">Mousse de maracujá fácil e prática</h5>
+					  <p class="card-text">Receita perfeita para um fim de tarde.</p>
+					  <a href="Receita2_card.html" class="btn btn-primary">Ver mais</a>
+  					</div>
+					</div>
+			 </div>
+			  <div class="col-sm-12 col-md-3 col-lg-4 col-xl-4">
+					<div class="card" style="width: 100%; height: 100%;">
+					  <img src="imagens/torta2.jpg" class="card-img-top" alt="..." style=" height: 100%;">
+					  <div class="card-body">
+					  <h5 class="card-title">Torta de liquidificador deliciosa</h5>
+					  <p class="card-text">Torta deliciosa para tomar com um cafezinho.</p>
+					  <a href="Receita3_card.html" class="btn btn-primary">Ver mais</a>
+  					</div>
+					</div>
+			 </div>
+		</div>
+		
+		<!-- Rodapé da págin -->
+		<div class="row" id="rodape" >
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12"><hr></hr>
+				<b>Organização: Mírian Andryellen Vital Pinheiro e Vanessa Maria
+					de Oliveira Silva. <br></br>
+				</b> Qualquer dúvida pode entrar em contato com os respectivos meios
+				abaixo. <br></br> E-mails: mirian.v@escolar.ifrn.edu.br ou
+				vanessa.maria@escolar.ifrn.edu.br. <br></br> Telefones: (084)
+				99465-7045 ou (084) 98816-3929 <br></br>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+/* preenchimento do plano de fundo da tag body com a cor #ddd e centralização dos elementos textuais dentro dela */
+
+body {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	background: #ddd;
+	color: #333;
+}
+
+h3 {
+	margin: 0 0 0.5em;
+	font-family: arial, "Arial NarroW", serif;
+}
+
+a:link {
+	color: #d2d2d2;
+}
+
+a:visited {
+	color: #ffffff;
+}
+
+/* o focus é usado para dá foco ao último link acessado */
+
+a:focus {
+	color: #ffff80;
+}
+
+a:hover {
+	background-color: #b1f1bd;
+}
+
+a: active {
+	color: #0000a0;
+}
+
+hr {
+	border: 1px solid black;
+}
+
+/* estilo aplicado ao div container, esse div engloba outros elementos. Ao definir sua largura como sendo 1000px temos uma container genérico visível, 
+pois ele vai ser menor que o body, sendo perceptível devido a cor aplicada ao plano de fundo de cada um ser diferente, além de outros elementos 
+utilizados como o auto na propriedade margin usado para centralizar o elemento de bloco div  */
+
+.container {
+	margin: 1em auto;
+	width: 1000px;
+	text-align: left;
+	background: #fff;
+}
+
+/* estilo do div cabeçalho */
+
+#cabecalho h3 {
+	text-weigth: bold;
+	margin: 15px 0 15px 0;
+	font-family: arial, "Arial Narrow", serif;
+	font-size: 18pt;
+	color: black;
+	text-align: center;
+}
+
+#cabecalho p {
+	text-weigth: bold;
+	margin: 15px 15px 15px 50px;
+	font-family: arial, "Arial Narrow", serif;
+	font-size: 11pt;
+	color: black;
+	align: justify;
+}
+
+
+/* alteração no tamanho da logo da página */
+
+#logo img{
+	width: 100%;
+} 
+
+/* alteração na imagem de uma pizza na página 1 */
+
+#imgpizza {
+	width: 500px;
+	height: 300px;
+	margin-left: 20px;
+	margin-top: 10pt;
+}
+
+/* estilho do div conteudo */
+
+#conteudo img {
+	margin-left: 15px;
+}
+
+#conteudo p {
+	margin: 10px 20px 0 20px;
+	font-family: arial, "Arial Narrow", serif;
+	font-size: 13pt;
+	color: black;
+	text-align: justify;
+	line-height: 25px;
+}
+
+/* aplicação de estilo na lista não ordenada */
+
+div ul {
+	margin: 0 20px 0 15px;
+	font-family: arial, "Arial Narrow", serif;
+	font-size: 13pt;
+	color: black;
+	text-align: justify;
+	line-height: 25px;
+}
+
+/* estilo do div decoração, esse serve para alterar uma parte da decoração da página*/
+
+.decoracao img {
+	width: 100%;
+}
+
+/* estilo do div curiosidades */
+
+#curiosidades {
+	margin: 10px 20px 0 20px;
+	font-family: arial, "Arial Narrow", serif;
+	font-size: 13pt;
+	color: black;
+	text-align: justify;
+	line-height: 25px;
+}
+
+/* estilo do div do rodapé da página */
+
+#rodape {
+	margin: 25px 15px 0 15px;
+	font-family: arial, "Arial Narrow", serif;
+	font-size: 13pt;
+	color: black;
+	text-align: center;
+	line-height: 15px;
+}

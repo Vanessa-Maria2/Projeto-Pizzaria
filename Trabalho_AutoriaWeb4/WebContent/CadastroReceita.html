@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	
+	<style>
+		body {
+			background-color: #20c997;;
+			/*  cor dada pelo customize color bootstap */
+		}
+		
+		.container {
+			width: 30%;
+			margin: auto;
+		}
+		
+		.card-body {
+			background-color: whith;
+		}
+		
+		#img {
+			width: 200px;
+			margin-left: 100px;
+			padding-top: 0px;
+		}
+		
+		h2 {
+			text-aling: center;
+		}
+		
+		#butPular {
+			text-align: center;
+		}
+	</style>
+	
+	<script>
+		//essa função válida se as informações contidas nos campos referente ao formulário são vazias.
+		function validarFormulario() {
+			if (document.formulario1.txtNome.value == "") {
+				alert("O formulário deve ser preenchido");
+				return false;
+			} else if (document.formulario1.ingredientes.value == "") {
+				alert("O formulário deve ser preenchido");
+				return false;
+			} else if (document.formulario1.preparo.value == "") {
+				alert("O formulário deve ser preenchido");
+				return false;
+	
+			} else if (document.formulario1.nivel.value == "") {
+				alert("O formulário deve ser preenchido");
+				return false;
+			} else if (document.formulario1.rendimento.value == "") {
+				alert("O formulário deve ser preenchido");
+				return false;
+			} else {
+	
+				return true;
+			}
+		}
+		
+		//essa função é acionada ao clicar no button pular página cujo objetivo é redirecionar para a página principal
+		function mudarPagina(){
+			window.location.href = "PaginaPrincipal.html";
+		}
+		
+	</script>
+
+	<title>Cadastro de Receita</title>
+</head>
+<body>
+
+	<div class="container">
+		<!--utilização do default container do bootstrap-->
+
+		<div class="row justify-center mb-4">
+			<!--utilização do Justify content do bootstrap .justify-content-center
+	     para centralizar a imagem-->
+			<img src="imagens/l1.png" id="img" />
+		</div>
+
+		<div class="card">
+			<!--utilização do componente Card do bootstrap para alinhamento do texto -->
+			<div class="card-body">
+				<fieldset>
+					<div class="row">
+						<legend>
+							<h2>Cadastro de Receita</h2>
+						</legend>
+						<span class="small d-block text-center"> Contribua com sua
+							receita em nosso site! <b> Culinária pelo mundo</b>
+						</span> <br> <span class="small d-block text-center"> OU</b></span>
+						<button type="button" class="btn btn-dark btn-block "
+							id="butPular" name="avancar" onclick="mudarPagina()">
+							Pular Cadastro</button>
+						<form action="PaginaPrincipal.html" name="formulario1" method="post"
+							enctype="multipart/form-data" style=" margin-top: 5px;">
+							<table>
+								<tr>
+									<!--utilização do Componente form control do bootstrap para o estilo personalizado -->
+
+									<th>Nome:</th>
+									<td><input type="text" name="txtNome" class="form-control"
+										id="validationServer01" placeholder="Nome Completo" mt-2>
+									</td>
+								</tr>
+								<tr>
+									<!--utilização do Componente form input group do bootstrap para o estilo personalizado dos Checkboxes and radios -->
+
+									<th>Nível:</th>
+
+									<td><input class="form-check-input" type="radio"
+										name="nivel" id="flexRadioDefault1"> Fácil <input
+										class="form-check-input" type="radio" name="nivel"
+										id="flexRadioDefault2" checked> Médio <input
+										class="form-check-input" type="radio" name="nivel"
+										id="flexRadioDefault3" checked> Difícil</td>
+								</tr>
+								<tr>
+									<!--utilização do Componente form control do bootstrap para o estilo personalizado -->
+									<th>Ingredientes:</th>
+									<td><textarea class="form-control"
+											placeholder="Ingredientes..." name="ingredientes"
+											id="floatingTextarea2" style="height: 50px"></textarea></td>
+								</tr>
+
+								<tr>
+									<th>Modo de preparo:</th>
+									<td><textarea class="form-control"
+											placeholder="Modo de preparo..." name="preparo"
+											id="floatingTextarea2" style="height: 50px"></textarea></td>
+								</tr>
+								<tr>
+									<th>Rendimento:</th>
+									<td><textarea class="form-control"
+											placeholder="Rendimento..." name="rendimento"
+											id="floatingTextarea2" style="height: 50px"></textarea></td>
+								</tr>
+
+
+
+
+								<tr>
+									<!--utilização do Componente form select do bootstrap para alterar a aparência do elemento inicial -->
+
+									<th>Contribuidor(a):</th>
+									<td><select class="form-select form-select-sm"
+										aria-label=".form-select-sm example">
+
+											<option value="A">Anônimo(a)</option>
+											<option value="C">Dar créditos</option>
+
+
+									</select></td>
+								</tr>
+
+								<tr>
+									<!--utilização do Componente buttom  do bootstrap para alterar o formato dos botões e a cor para Dark -->
+
+									<td colspan="2" style="text-align: center;"><input
+										class="btn btn-dark" type="submit" value="Cadastrar"
+										onclick="return validarFormulario();"> <input
+										class="btn btn-dark" type="reset" value="Limpar"></td>
+								</tr>
+							</table>
+						</form>
+					</div>
+				</fieldset>
+			</div>
+			
+		</div>
+
+	</div>
+</body>
+</html>
